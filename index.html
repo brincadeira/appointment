@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Запись к врачу</title>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+</head>
+  
+<body>
+    <div class="container">
+        <h1>Запись к врачу</h1>
+        <div class="row">
+            <div class="col">
+                <form action="appointment.php" id="form" class="row">
+                    <div class="mb-3 col-lg-6">
+                        <label for="doctors-list" class="form-label">ФИО врача</label>
+                        <select class="form-select" name="doctor"  id="doctors-list">
+                        </select>                     
+                    </div>
+                    <div class="mb-3 col-md-6 col-lg-3">
+                        <label for="date" class="form-label">Дата</label>
+                        <input id="date" class="form-control" type="date" name="date" required pattern="\d{4}-\d{2}-\d{2}">
+                    </div>
+                    <div class="mb-3 col-md-6 col-lg-3">
+                        <label for="time" class="form-label">Время</label>
+                        <select id="time" class="form-select" name="time">
+                            <option value="10:00:00">10:00</option>
+                            <option value="11:00:00">11:00</option>
+                            <option value="12:00:00">12:00</option>
+                            <option value="13:00:00">13:00</option>
+                            <option value="14:00:00">14:00</option>
+                            <option value="15:00:00">15:00</option>
+                            <option value="16:00:00">16:00</option>
+                            <option value="17:00:00">17:00</option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-primary" id="btnSubmit">Отправить</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body" id="result">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>  
+</html>
