@@ -18,7 +18,7 @@ if (isset($_POST['doctor']) && isset($_POST['date']) && isset($_POST['time'])) {
 
                 // Create the Transport
                 $transport = (new Swift_SmtpTransport($emailServer, $emailPort, 'ssl'))
-                ->setUsername($email)
+                ->setUsername($emailFrom)
                 ->setPassword($emailPassword);
 
                 // Create the Mailer using your created Transport
